@@ -15,10 +15,10 @@ function push(){
 			break
 		fi
 	done
-	echo $VERSION
+
 	# 更新podspec
 	sed -i "" "s/s.version\([ ]\{1,\}\)=\([ ]\{1,\}\)\([\'|\"]\)\([^\"]\{1,\}\([\'|\"]\)\)/s.version = \"${VERSION}\"/g" ${FILENAME}
-
+	
 	# 打包验证
 	git add --all
 	git commit -am "update podspec" 
@@ -33,7 +33,16 @@ function push(){
 		echo "> pod trunk push ${FILENAME}"
 		pod trunk push ${FILENAME}
 	fi
+
+	# 更新脚本
+	echo '> 正在更新脚本...'
+	curl -O -# 'https://raw.githubusercontent.com/xaoxuu/podspec.sh/master/podspec.sh' && chmod 777 podspec.sh  && . podspec.sh
+	git add podspec.sh
+	git commit -m "update podspec.sh" 
+	# git push origin
+
 }
+
 
 count=$(ls *.podspec | wc -l)
 
