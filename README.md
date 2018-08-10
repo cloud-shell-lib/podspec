@@ -12,6 +12,8 @@ let `path` = 你的项目的 `podspec` 所在的路径
 curl -O 'https://raw.githubusercontent.com/xaoxuu/podspec.sh/master/podspec.sh' && chmod 777 podspec.sh && . podspec.sh
 ```
 
+
+
 ## 脚本的功能
 
 - 如果目录下有一个podspec文件，直接询问版本号，然后打包验证、询问是否发布。
@@ -24,3 +26,4 @@ curl -O 'https://raw.githubusercontent.com/xaoxuu/podspec.sh/master/podspec.sh' 
 ```shell
 chmod 777 podspec.sh
 ```
+

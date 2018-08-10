@@ -3,19 +3,19 @@
 # 如果目录下有一个podspec文件，直接询问版本号，然后打包验证、发布
 # 如果目录下有多个podspec文件，遍历每一个podspec文件，询问版本号，然后打包验证、发布
 
+VERSION=$1
+
 function push(){
 	# 输入版本号
 	while :
 	do
-		read -p "请输入${FILENAME}版本号: " VERSION
 		if [ "$VERSION" == "" ];then
-		    continue
+			read -p "请输入${FILENAME}版本号: " VERSION
 		else
 			break
-			VERSION=$1
 		fi
 	done
-
+	echo $VERSION
 	# 更新podspec
 	sed -i "" "s/s.version\([ ]\{1,\}\)=\([ ]\{1,\}\)\([\'|\"]\)\([^\"]\{1,\}\([\'|\"]\)\)/s.version = \"${VERSION}\"/g" ${FILENAME}
 
