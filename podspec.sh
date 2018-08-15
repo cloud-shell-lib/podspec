@@ -58,7 +58,7 @@ do
 	elif [ $count == 1 ]; then
 			push
 	else
-			echo "⚠️  没有找到podspec"
+			echo -e "> \\033[0;31m没有找到podspec。\\033[0;39m"
 	fi
 done
 
