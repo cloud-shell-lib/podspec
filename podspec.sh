@@ -29,7 +29,7 @@ function cmd_update_s(){
 # 更新脚本
 function cmd_update(){
 	echo '> 正在更新脚本...'
-	curl -O 'https://raw.githubusercontent.com/xaoxuu/podspec.sh/master/podspec.sh' -# && chmod 777 podspec.sh && cmd_update_s
+	curl -O 'https://raw.githubusercontent.com/xaoxuu/podspec.sh/master/podspec.sh' -# && chmod 777 podspec.sh && cmd_update_s || cmd_update_f
 }
 
 
