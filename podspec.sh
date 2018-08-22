@@ -19,8 +19,7 @@ function cmd_update_f(){
 	echo -e "> \\033[0;31m更新失败！我们都有不顺利的时候。\\033[0;39m"
 	git checkout podspec.sh
 	PODVERSION=""
-	echo "按下任意键继续: "
-	read -n 1 
+	
 }
 # 更新成功之后，重启脚本并把当前的版本传递过去
 function cmd_update_s(){
