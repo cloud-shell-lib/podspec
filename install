@@ -6,7 +6,7 @@ const_client='podspec.sh'
 
 param1_version=$1
 case $param1_version in
-	'') param1_version='master' ;;
+	'') param1_version='v1' ;;
 	*) ;;
 esac
 
@@ -18,4 +18,4 @@ function on_success() {
 
 
 curl -s ${const_lib}/download.sh | sh -s ${const_repo} ${param1_version} ${const_client} ./ &&
-chmod 777 ${const_client}
+chmod 777 ${const_client} && on_success
