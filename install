@@ -1,12 +1,12 @@
 #!/bin/bash
 
-const_lib=https://raw.githubusercontent.com/xaoxuu/lib/v1
+const_lib=https://cdn.jsdelivr.net/gh/xaoxuu/shell-lib@1.1
 const_repo='podspec.sh'
 const_client='podspec.sh'
 
 param1_version=$1
 case $param1_version in
-	'') param1_version='v1' ;;
+	'') param1_version='master' ;;
 	*) ;;
 esac
 
