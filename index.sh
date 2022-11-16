@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # function lib
-lib=https://cdn.jsdelivr.net/gh/xaoxuu/lib.sh@2.0
+lib='https://sh.xaox.cc/lib/v1'
 
 # repository name
 REPO='podspec.sh'
@@ -11,18 +11,8 @@ TARGET='podspec.sh'
 # download version
 VERSION=$1
 if [ "$VERSION" == "" ];then
-	VERSION='master'
+	VERSION='main'
 fi
-
-
-const_repo='podspec.sh'
-const_client='podspec.sh'
-
-param1_version=$1
-case $param1_version in
-	'') param1_version='master' ;;
-	*) ;;
-esac
 
 function on_success() {
 	doc_url=https://xaoxuu.com/wiki/${REPO}/
@@ -30,5 +20,5 @@ function on_success() {
 }
 
 
-curl -s ${lib}/download.sh | sh -s xaoxuu ${REPO} ${VERSION} ${TARGET} ./ &&
+curl -s ${lib}/download.sh | sh -s ${REPO} ${VERSION} ${TARGET} ./ &&
 chmod 777 ${TARGET} && on_success

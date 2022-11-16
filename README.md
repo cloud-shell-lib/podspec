@@ -8,7 +8,7 @@ let `path` = 你的项目的 `podspec` 所在的路径
 打开终端，cd 到 `path` ，输入下面这条命令下载脚本到当前文件夹：
 
 ```bash
-curl -s https://xaoxuu.com/install | sh -s podspec.sh
+curl -s https://sh.xaox.cc/install | bash -s podspec.sh
 ```
 需要发布 podspec 到时候，在终端中输入：
 
